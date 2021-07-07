@@ -12,7 +12,7 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create company" do
     assert_difference('Company.count') do
-      post companies_url, params: { company: { delivery_id: @company.delivery_id, driver_id: @company.driver_id } }, as: :json
+      post companies_url, params: { company: { delivery_id: @company.delivery_id, driver_id: @company.driver_id, name: @company.name } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class CompaniesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update company" do
-    patch company_url(@company), params: { company: { delivery_id: @company.delivery_id, driver_id: @company.driver_id } }, as: :json
+    patch company_url(@company), params: { company: { delivery_id: @company.delivery_id, driver_id: @company.driver_id, name: @company.name } }, as: :json
     assert_response 200
   end
 

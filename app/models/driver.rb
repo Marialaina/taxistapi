@@ -1,3 +1,3 @@
 class Driver < ApplicationRecord
-  belongs_to :delivery
+  has many :drivers, through :deliveries
 end
